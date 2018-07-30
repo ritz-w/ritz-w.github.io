@@ -1,12 +1,79 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>B L O G</title><description>Thoughts, stories and ideas about web development.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>B L O G</title><link>http://localhost:2368/</link></image><generator>Ghost 1.24</generator><lastBuildDate>Wed, 25 Jul 2018 10:34:12 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Get your hands dirty: Three ways to test code/debug by messing around</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;It's probably important to clarify that when I say 'messing around', I mean in an organised way.&lt;/p&gt;
-&lt;/div&gt;</description><link>http://localhost:2368/testing-a-new-blog-post/</link><guid isPermaLink="false">5b5725f57e37617dca1bb3c4</guid><dc:creator>Ritz Wu</dc:creator><pubDate>Tue, 24 Jul 2018 13:13:40 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;It's probably important to clarify that when I say 'messing around', I mean in an organised way.&lt;/p&gt;
-&lt;/div&gt;</content:encoded></item><item><title>Programming, Lee Bul and the awareness of SELF</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;This week I went to an exhibition at the Hayward Gallery, they were showing a retrospective of Korean artist Lee Bul's work. The work in the last room was called Via Negativa, which consisted of a maze of fragmented mirrors leading to a central room with an infinity mirror chamber,&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2368/learning-how-to-write-in-sql/</link><guid isPermaLink="false">5b55c09549b06d4dcab52644</guid><dc:creator>Ritz Wu</dc:creator><pubDate>Mon, 23 Jul 2018 11:49:45 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;This week I went to an exhibition at the Hayward Gallery, they were showing a retrospective of Korean artist Lee Bul's work. The work in the last room was called Via Negativa, which consisted of a maze of fragmented mirrors leading to a central room with an infinity mirror chamber, surrounded by lights.&lt;/p&gt;
-&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/07/via-negativa.jpg" alt="via-negativa"&gt;&lt;br&gt;
-People really did like taking selfies in this work.&lt;/p&gt;
-&lt;p&gt;The outside of the structure is pages printed in reverse of Julian Jaynes' 'The origin of consciousness.'&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>B L O G </title><description>Thoughts, stories and ideas about web development, by Ritz.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>B L O G </title><link>http://localhost:2368/</link></image><generator>Ghost 1.24</generator><lastBuildDate>Mon, 30 Jul 2018 14:22:48 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>WWJD: Strategies for Debugging</title><description>&lt;div class="kg-post"&gt;
+&lt;p&gt;When it comes to the sometimes extreme complexity of relationships created by object-oriented programming, we all know that heart-sinking feeling when one little change causes a lot of things to break. Or, when looking for the culprit behind the error in your code feels like a unicode version of 'Where's&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2368/testing-a-new-blog-post/</link><guid isPermaLink="false">5b5725f57e37617dca1bb3c4</guid><dc:creator>Ritz Wu</dc:creator><pubDate>Tue, 24 Jul 2018 13:13:40 GMT</pubDate><content:encoded>&lt;div class="kg-post"&gt;
+&lt;p&gt;When it comes to the sometimes extreme complexity of relationships created by object-oriented programming, we all know that heart-sinking feeling when one little change causes a lot of things to break. Or, when looking for the culprit behind the error in your code feels like a unicode version of 'Where's Waldo.'&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://frinkiac.com/video/S11E06/C2m6E51uBVuXMwZSr9EbFCLTEmE=.gif" alt="via Giphy"&gt;&lt;/p&gt;
+&lt;p&gt;At times like this, one of the very best things you can do is to stop looking at the big picture, enter into what you've created, and troubleshoot for yourself where things have gone wrong, line by line of code.&lt;/p&gt;
+&lt;p&gt;While I bear no religious affliation, for the intents and purposes of this metaphor, let's take ourselves into one of the most ubiquitous stories of modern civilization and imagine, if you will, that you're the New Testament Judeo-Christian God.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://media.giphy.com/media/hYAvfvuj8xKxO/giphy.gif" alt="via Disney Blogs"&gt;&lt;/p&gt;
+&lt;p&gt;You've created a fabulous creature called a human, they love you (mostly) and you love them (mostly). Everything is going well.&lt;/p&gt;
+&lt;p&gt;But sometimes, things get complicated between the humans you've created, the humans they've procreated, and all of that ensuing sin.&lt;/p&gt;
+&lt;p&gt;Unlike Old Testament Judeo-Christian God, you know the most direct way to solve this problem is to get a little hands-on. But it's the New Testament now. It's been nice trying to figure out the situation from a safe distance. But sometimes, when you don't put yourself into the shoes of your object, you can't see what's going on.&lt;/p&gt;
+&lt;p&gt;To do so, we must, stop everything at one line, intervene into the world we've created, and sort that #$%&amp;amp; out. Enter Pry, aka Jesus.&lt;/p&gt;
+&lt;p&gt;As New Testament God's alternative to destroying everything (DELETE ALL AND START AGAIN), he's decided to demonstrate emotional growth, by tasking Jesus with coming to Earth, living amongst the humans and debugging their greatest moral problems.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.imgur.com/EsTxfLF.gif" alt="Courtesy of A Science Enthusiast"&gt;&lt;/p&gt;
+&lt;p&gt;Here's where this tenuous religious metaphor ends, and where I begin presenting a few strategies for debugging with tools like Pry (Jesus) that I've used and researched, that may help you to slowly back away from the wall you've been banging your head against, and expedite your journey to learn submit success.&lt;/p&gt;
+&lt;h1 id="step1"&gt;Step 1&lt;/h1&gt;
+&lt;p&gt;EVEN BEFORE YOU USE PRY -  First and foremost, always read the error, go to that line of code, and see if the problem jumps out at you. For example, if it is an immediately apparent syntax error or argument error, it might be very obvious right in that line of code.&lt;/p&gt;
+&lt;p&gt;But what about when it's not so obvious? We know that sometimes some line of code somewhere else, which is connected to the line of code generating the error, is the cause of our problems. In cases like this, Proceed to Step 2.&lt;/p&gt;
+&lt;h1 id="step2"&gt;Step 2&lt;/h1&gt;
+&lt;p&gt;Essentially we use Pry to examine program states. It stops your code at a given point so we can check two main things - what the variables are, and whether the method calls in a call stack (series of method calls) run. We use it to investigate each part of our code, to locate where the error might be coming from.&lt;/p&gt;
+&lt;p&gt;Use Pry to break apart the line of code that you are struggling with, and test each part of it.&lt;/p&gt;
+&lt;p&gt;For example, given this block of code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;num_followers = 5000;
+
+def JesusMagic(num_of_sth)
+    num_of_sth * 100
+end
+
+def MagicMultiply(loaves_of_bread, fish)
+    portion_bread = loaves_of_bread / num_followers
+    portion_fish = fish / num_followers
+    more_bread = JesusMagic(portion_bread)
+    more_fish = JesusMagic(portion_fish)
+    puts &amp;quot;Each of Jesus's followers actually ate #{more_bread} bread and #{more_fish} fish.&amp;quot;
+end
+
+MagicMultiply(5, 3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Test the variables.&lt;/p&gt;
+&lt;p&gt;Test the method.&lt;/p&gt;
+&lt;p&gt;Test the variables and method in combination.&lt;/p&gt;
+&lt;p&gt;Progressively test in bigger and bigger chunks, until you're testing for the whole method/call.&lt;/p&gt;
+&lt;p&gt;Where you're finding that something is equal to something it's not supposed to be, or generating another error, you're getting closer to the root of the problem.&lt;/p&gt;
+&lt;p&gt;Now Pry is just one of many debugging tools that exist for every language, that stop and restart a process in code at the point you set it.&lt;/p&gt;
+
+&lt;/div&gt;</content:encoded></item><item><title>Object-oriented programming, Lee Bul and the awareness of SELF</title><description>&lt;div class="kg-post"&gt;
+&lt;p&gt;I went to the Hayward Gallery this week, where they were showing a retrospective of Korean artist Lee Bul. The work in the last room, which felt like the grand finale, was called 'Via Negativa'. It was a sculpture which consisted of a maze of fragmented mirrors leading to a&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2368/learning-how-to-write-in-sql/</link><guid isPermaLink="false">5b55c09549b06d4dcab52644</guid><dc:creator>Ritz Wu</dc:creator><pubDate>Mon, 23 Jul 2018 11:49:45 GMT</pubDate><content:encoded>&lt;div class="kg-post"&gt;
+&lt;p&gt;I went to the Hayward Gallery this week, where they were showing a retrospective of Korean artist Lee Bul. The work in the last room, which felt like the grand finale, was called 'Via Negativa'. It was a sculpture which consisted of a maze of fragmented mirrors leading to a central room with an infinity mirror chamber, surrounded by lights.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/07/via-negativa.jpg" alt="Via Negativa, Lee Bul"&gt;&lt;sup class="footnote-ref"&gt;&lt;a href="#fn1" id="fnref1"&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;People really did like taking selfies in this work. The outside of the structure is covered by pages of Julian Jaynes' 'The origin of consciousness', printed in reverse. A quote from this book shows some of Lee Bul's thinking behind this structure, which disorients the viewer through continuously shifting reflections of their own image as they walk through.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;quot;Originally, humans thought that self-consciousness was either their own thought, or the voice of God. As people’s lives began to get more complicated, the two territories have become connected and, while going back and forth between the two self-consciousnesses, we look and review [the ways in which] our selves come about.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;After reviewing more of Jaynes' work, which in one instance posited that humans did not gain self consciousness until the 18th century, my partner (who had come with me) had pointed out that the philosophical underpinnings of the work were so archaic to be aesthetic at best and lazy at worst. But it had me thinking about the idea of self awareness and the self as an object.&lt;/p&gt;
-&lt;p&gt;In computer programming, in various languages, this, self, and Me are keywords used to refer to the object, class, or other entity of which the code is part. It is a key concept within object-oriented programming and a unique instance in which the syntax of code resembles, for an instant, to create a self-aware person or object.&lt;/p&gt;
+&lt;p&gt;While looking at this work, I started thinking about the idea of self awareness and the self as an object.&lt;/p&gt;
+&lt;p&gt;In computer programming, in various languages, this, self, and Me are keywords used to refer to the object, class, or other entity of which the code is part. It is a defining concept within object-oriented programming. In human psychology, self-awareness, which emerges at around 18 months of age, also is the point at which we are able to evaluate ourselves in relation to others.&lt;/p&gt;
+&lt;p&gt;If we think about it - this habit of thinking of ourselves as objects, and others as objects, and all of our relationships as objects, as we do when we are reflecting in a self-aware way, we might easily understand why this approach was invented, and how it is in a certain way, intuitive for humans to use.&lt;/p&gt;
+&lt;p&gt;Object-oriented programming, is known a paradigm in which all computations are carried out using objects. Classes, objects, methods are all ways of defining objects, creating them, and relating them to each other.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/07/oop-objects.png" alt="oop-objects"&gt;&lt;sup class="footnote-ref"&gt;&lt;a href="#fn2" id="fnref2"&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Correspondingly, our ability to understand ourselves and the natural world by looking at processes as objects (think of any word that ends in '-ment' or '-tion', turning a verb into a noun) lends itself well to the thinking behind OO.  Indeed, the inventor of Object Oriented Programming, Alan Kay, took inspiration from biology when he was developing the language Smalltalk in 1980. One of his inspirations was the biological cell - and how it as a self-contained unit communicated with other cells via chemical messages.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/07/cell_images.png" alt="cell_images"&gt; &lt;sup class="footnote-ref"&gt;&lt;a href="#fn3" id="fnref3"&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;It occurred to me that object-oriented-ness was not only a computer science methodology, but a way of thinking. And perhaps, learning to see things more explicitly in terms of objects would greatly help with the task of translating them to code in an object-oriented language.&lt;/p&gt;
+&lt;p&gt;I'll give an example! For example, a &lt;a href="https://www.semanticscholar.org/paper/Bodily-self-consciousness%2C-and-the-primacy-of-self-Elk-Blanke/53785ffd81fe6a4445a045324ada9b8099833d05"&gt;certain study about bodily self consciousness&lt;/a&gt; looks into the way that we might be aware of objects through other people's awareness of them.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/07/awareness.png" alt="awareness"&gt; &lt;sup class="footnote-ref"&gt;&lt;a href="#fn4" id="fnref4"&gt;[4]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Though this might seem to be a quite subtle and abstract phenomenon, we might be able to apply this to the hard logic of the computer by thinking of this process through OO programming. What if we were to consider Abel and objects that he is aware of through Bill as a has-many-through relationship?&lt;/p&gt;
+&lt;p&gt;What other possibilities exist in translating concepts in the natural world to code? Food for thought.&lt;/p&gt;
+&lt;hr class="footnotes-sep"&gt;
+&lt;section class="footnotes"&gt;
+&lt;ol class="footnotes-list"&gt;
+&lt;li id="fn1" class="footnote-item"&gt;&lt;p&gt;&lt;a href="https://creators.vice.com/en_us/article/ez5nxa/lee-buls-labyrinth-of-infinity-mirrors-via-negativa-ii-video"&gt;https://creators.vice.com/en_us/article/ez5nxa/lee-buls-labyrinth-of-infinity-mirrors-via-negativa-ii-video&lt;/a&gt; &lt;a href="#fnref1" class="footnote-backref"&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn2" class="footnote-item"&gt;&lt;p&gt;&lt;a href="https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cp3_OOP.html"&gt;https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cp3_OOP.html&lt;/a&gt; &lt;a href="#fnref2" class="footnote-backref"&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn3" class="footnote-item"&gt;&lt;p&gt;&lt;a href="https://www.khanacademy.org/science/biology/cell-signaling/mechanisms-of-cell-signaling/a/introduction-to-cell-signaling"&gt;https://www.khanacademy.org/science/biology/cell-signaling/mechanisms-of-cell-signaling/a/introduction-to-cell-signaling&lt;/a&gt; &lt;a href="#fnref3" class="footnote-backref"&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn4" class="footnote-item"&gt;&lt;p&gt;&lt;a href="https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/53785ffd81fe6a4445a045324ada9b8099833d05/5-Figure1-1.png"&gt;https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/53785ffd81fe6a4445a045324ada9b8099833d05/5-Figure1-1.png&lt;/a&gt; &lt;a href="#fnref4" class="footnote-backref"&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
 &lt;/div&gt;</content:encoded></item></channel></rss>
