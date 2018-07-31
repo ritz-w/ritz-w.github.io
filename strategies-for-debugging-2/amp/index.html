@@ -1,3 +1,4 @@
+
 <head>
     <meta charset="utf-8">
 
@@ -16,13 +17,13 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="WWJD: Strategies for Debugging">
     <meta property="og:description" content="When it comes to the sometimes extreme complexity of relationships created by object-oriented programming, we all know that heart-sinking feeling when one little change causes a lot of things to break. Or, when looking for the culprit behind the error in your code feels like a unicode version of 'Where's">
-    <meta property="og:url" content="http://localhost:2368/testing-a-new-blog-post/">
+    <meta property="og:url" content="http://localhost:2368/strategies-for-debugging-2/">
     <meta property="article:published_time" content="2018-07-24T13:13:40.000Z">
-    <meta property="article:modified_time" content="2018-07-30T14:20:49.000Z">
+    <meta property="article:modified_time" content="2018-07-31T13:52:26.000Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="WWJD: Strategies for Debugging">
     <meta name="twitter:description" content="When it comes to the sometimes extreme complexity of relationships created by object-oriented programming, we all know that heart-sinking feeling when one little change causes a lot of things to break. Or, when looking for the culprit behind the error in your code feels like a unicode version of 'Where's">
-    <meta name="twitter:url" content="http://localhost:2368/testing-a-new-blog-post/">
+    <meta name="twitter:url" content="http://localhost:2368/strategies-for-debugging-2/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Ritz Wu">
     <meta name="twitter:site" content="@ridtsz">
@@ -52,9 +53,9 @@
         ]
     },
     "headline": "WWJD: Strategies for Debugging",
-    "url": "http://localhost:2368/testing-a-new-blog-post/",
+    "url": "http://localhost:2368/strategies-for-debugging-2/",
     "datePublished": "2018-07-24T13:13:40.000Z",
-    "dateModified": "2018-07-30T14:20:49.000Z",
+    "dateModified": "2018-07-31T13:52:26.000Z",
     "description": "When it comes to the sometimes extreme complexity of relationships created by object-oriented programming, we all know that heart-sinking feeling when one little change causes a lot of things to break. Or, when looking for the culprit behind the error in your code feels like a unicode version of &#x27;Where&#x27;s",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -73,6 +74,7 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
     <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 
 </head>
 
@@ -97,28 +99,39 @@
 
                 <div class="kg-post">
 <p>When it comes to the sometimes extreme complexity of relationships created by object-oriented programming, we all know that heart-sinking feeling when one little change causes a lot of things to break. Or, when looking for the culprit behind the error in your code feels like a unicode version of 'Where's Waldo.'</p>
-<p><amp-anim src="https://frinkiac.com/video/S11E06/C2m6E51uBVuXMwZSr9EbFCLTEmE=.gif" alt="via Giphy" width="480" height="360" layout="responsive"></amp-anim></p>
+<p></p>
 <p>At times like this, one of the very best things you can do is to stop looking at the big picture, enter into what you've created, and troubleshoot for yourself where things have gone wrong, line by line of code.</p>
 <p>While I bear no religious affliation, for the intents and purposes of this metaphor, let's take ourselves into one of the most ubiquitous stories of modern civilization and imagine, if you will, that you're the New Testament Judeo-Christian God.</p>
 <p><amp-anim src="https://media.giphy.com/media/hYAvfvuj8xKxO/giphy.gif" alt="via Disney Blogs" width="500" height="227" layout="responsive"></amp-anim></p>
-<p>You've created a fabulous creature called a human, they love you (mostly) and you love them (mostly). Everything is going well.</p>
+<p>You've created a fabulous creature called a human, they love you (mostly) and you love them (mostly). Everything is going well (kind of).</p>
 <p>But sometimes, things get complicated between the humans you've created, the humans they've procreated, and all of that ensuing sin.</p>
 <p>Unlike Old Testament Judeo-Christian God, you know the most direct way to solve this problem is to get a little hands-on. But it's the New Testament now. It's been nice trying to figure out the situation from a safe distance. But sometimes, when you don't put yourself into the shoes of your object, you can't see what's going on.</p>
-<p>To do so, we must, stop everything at one line, intervene into the world we've created, and sort that #$%&amp; out. Enter Pry, aka Jesus.</p>
+<p>To do so, we must, stop everything at one line, find a way to infiltrate into the world we've created, and figure that #$%&amp; out from the bottom-up. Enter Pry, aka Jesus.</p>
 <p>As New Testament God's alternative to destroying everything (DELETE ALL AND START AGAIN), he's decided to demonstrate emotional growth, by tasking Jesus with coming to Earth, living amongst the humans and debugging their greatest moral problems.</p>
 <p><amp-anim src="https://i.imgur.com/EsTxfLF.gif" alt="Courtesy of A Science Enthusiast" width="500" height="249" layout="responsive"></amp-anim></p>
-<p>Here's where this tenuous religious metaphor ends, and where I begin presenting a few strategies for debugging with tools like Pry (Jesus) that I've used and researched, that may help you to slowly back away from the wall you've been banging your head against, and expedite your journey to learn submit success.</p>
-<h1 id="step1">Step 1</h1>
-<p>EVEN BEFORE YOU USE PRY -  First and foremost, always read the error, go to that line of code, and see if the problem jumps out at you. For example, if it is an immediately apparent syntax error or argument error, it might be very obvious right in that line of code.</p>
-<p>But what about when it's not so obvious? We know that sometimes some line of code somewhere else, which is connected to the line of code generating the error, is the cause of our problems. In cases like this, Proceed to Step 2.</p>
-<h1 id="step2">Step 2</h1>
-<p>Essentially we use Pry to examine program states. It stops your code at a given point so we can check two main things - what the variables are, and whether the method calls in a call stack (series of method calls) run. We use it to investigate each part of our code, to locate where the error might be coming from.</p>
+<p>Here's where this tenuous religious metaphor ends, and where I begin presenting a few strategies for debugging with tools like Pry (Jesus) that I've used and researched, that may help you to slowly back away from the wall you've been banging your head against, and expedite your journey to testing success.</p>
+<h1 id="step1readtheerror">Step 1: Read the Error</h1>
+<p>BEFORE YOU TRY ANYTHING -  First and foremost, always read the error. I mean, really, read it. Don't just skim over it, no matter how tired you are. Go to that line of code that it's pointing you to, and see if the problem jumps out at you. For example, if it is an immediately apparent syntax error or argument error, it might be very obvious right in that line of code.</p>
+<p>But what about when it's not so obvious? We know that sometimes some line of code somewhere else, which is connected to the line of code generating the error, is the cause of our problems.</p>
+<p>There are two common errors that one might encounter that cause a method/program not to work.</p>
+<ol start="2">
+<li>
+<p>The first is when it is clear that the program is able to find all of its parts and run successfully, but what you run is  returning the wrong thing. In this case, the problem is within your code. <strong>Proceed to Step 2.</strong></p>
+</li>
+<li>
+<p>The second is connectivity (whether the file in question is set up  correctly, and linked correctly to its components). You might come across an error like this if you get a missing method or missing class error. In cases like this, <strong>proceed to step 3.</strong></p>
+</li>
+</ol>
+<h1 id="step2breakitapart">Step 2: Break it Apart</h1>
+<p>When we know what step in your code isn't working, it's best to use a debugger tool such as Pry. Every language has it's own Pry, maybe called something different.</p>
+<p>Essentially we use debuggers to examine program states. It stops your code at a given point so we can check two main things - what the variables are, and whether the method calls in a call stack (series of method calls) run. We use it to investigate each part of our code, to locate where the error might be coming from.</p>
+<p>Like Jesus, you have essentially descended from the heavens into your code to try to figure out what's going on.</p>
 <p>Use Pry to break apart the line of code that you are struggling with, and test each part of it.</p>
 <p>For example, given this block of code:</p>
 <pre><code>num_followers = 5000;
 
 def JesusMagic(num_of_sth)
-    num_of_sth * 100
+    num_of_sth * 1000
 end
 
 def MagicMultiply(loaves_of_bread, fish)
@@ -126,17 +139,141 @@ def MagicMultiply(loaves_of_bread, fish)
     portion_fish = fish / num_followers
     more_bread = JesusMagic(portion_bread)
     more_fish = JesusMagic(portion_fish)
-    puts "Each of Jesus's followers actually ate #{more_bread} bread and #{more_fish} fish."
+    binding.pry //I'm here guys! Love, Jesus
+    puts "Each of Jesus's #{num_followers} followers actually ate #{more_bread} bread and #{more_fish} fish, which he magicked out of #{loaves_of_bread} loaves of bread and #{fish} fish. Go Jesus!"
 end
 
 MagicMultiply(5, 3)
 </code></pre>
-<p>Test the variables.</p>
-<p>Test the method.</p>
-<p>Test the variables and method in combination.</p>
+<p>Pry will stop the method right after we define more_fish, and before we return our final string. At this point we:</p>
+<p><em><strong>Test the variables.</strong></em><br>
+<amp-img src="http://www.rosiejensing.com/wp-content/uploads/2015/09/jesuspic.jpg" width="425" height="320" layout="responsive"></amp-img></p>
+<p>What is <code>num_followers</code>?<br>
+What is <code>loaves_of_bread</code>?</p>
+<p>Is it what we think it should be?</p>
+<p><mark><em>Oops! The code above is returning 0 for <code>num_followers</code>. That means it's probably not reading that variable. If we try putting it inside the method, it returns 5000, correctly.</em></mark></p>
+<hr>
+<p><em><strong>Test the methods.</strong></em><br>
+<amp-img src="https://media1.tenor.com/images/007f39176a63cc71b211579096a4e542/tenor.gif?itemid=9496003" width="152" height="250" layout="fixed"></amp-img></p>
+<p>Given a random number, like 2...</p>
+<p>What is <code>JesusMagic(2)</code>?<br>
+Is it what we think it should be?</p>
+<p>What is <code>portion_bread</code> at this stop point? Is it indeed 5 divided by 5000? Check it on a calculator.</p>
+<p>What is <code>portion_fish</code> at this stop point? Is it indeed 3 divided by 5000?<br>
+Check it on a calculator.</p>
+<p><mark><em>Hot damn! Testing <code>portion_bread</code> and <code>portion_fish</code> we find that the operation returns 0, and after some googling realize that when we are expecting a number with a decimal to be returned, the number that's being divided needs to be a float (end with .0).</em></mark></p>
+<hr>
+<p><em><strong>Test the variables and method in combination.</strong></em></p>
+<p>What is <code>more_bread</code>? Does it multiply <code>portion_bread</code> by 100?</p>
+<p>What is <code>more_fish</code>? Does it multiply <code>portion_fish</code> by 100?</p>
+<p><mark><em>This seems fine.</em></mark></p>
+<hr>
+<p>Using pry, you can also google methods you haven't tried before and try using them as well in an attempt to return the right thing.</p>
+<p>What if we typed in <code>JesusMagic(loaves_of_bread / num_followers)</code>? Does that still work? Would that be a better alternative?</p>
 <p>Progressively test in bigger and bigger chunks, until you're testing for the whole method/call.</p>
 <p>Where you're finding that something is equal to something it's not supposed to be, or generating another error, you're getting closer to the root of the problem.</p>
-<p>Now Pry is just one of many debugging tools that exist for every language, that stop and restart a process in code at the point you set it.</p>
+<hr>
+<p>So in the example above, factoring in our corrections we get:</p>
+<pre><code>def JesusMagic(num_of_sth)
+    num_of_sth * 1000
+end
+
+def MagicMultiply(loaves_of_bread, fish)
+	num_followers = 5000
+    portion_bread = loaves_of_bread.to_f / num_followers
+    portion_fish = fish.to_f / num_followers
+    more_bread = JesusMagic(portion_bread)
+    more_fish = JesusMagic(portion_fish)
+    puts "Each of Jesus's #{num_followers} followers actually ate #{more_bread} bread and #{more_fish} fish, which he magicked out of #{loaves_of_bread} loaves of bread and #{fish} fish. Go Jesus!"
+end
+
+MagicMultiply(5, 3)
+</code></pre>
+<p><mark>Each of Jesus's 5000 followers actually ate 1.0 bread and 0.6 fish, which he magicked out of 5 loaves of bread and 3 fish. Go Jesus!</mark></p>
+<p>Much better.</p>
+<hr>
+<h1 id="step3checkyourbases">Step 3: Check your Bases</h1>
+<p>If the error is coming from missing components, methods, classes, or instances, the first thing to do is to check your bases:</p>
+<ol>
+<li><strong>Examine your assumptions:</strong> Are you working in the right place? Is the code you're writing meant to be there? Check other files or look online for clues to see if other people are putting that block of code in the same place.<br>
+2.<strong>Check your access:</strong> Can you access the variables and methods you're trying to use? If variables - Are they inside or outside of the method? Do you have read/write access where you're attempting to call them? If methods - are they defined correctly as class or instance? Are you putting in the right amount or format of arguments?</li>
+<li><strong>Spelling and Syntax:</strong> Are the syntax and spelling of your methods within your method definitions correct? If the error reports that something is missing, are all of your necessary  files correctly named and linked?</li>
+<li><strong>Environment:</strong> Is the order of linked files correct? For example, are you attempting to run methods or classes which are linked in your environment after the one you've invoked it in? Are you missing gems?</li>
+</ol>
+<p>If just thinking through these things doesn't yield any answers, you can try the following techniques.</p>
+<h3 id="moregeneraltechniquestolocatetheproblem">More General Techniques to Locate the Problem</h3>
+<h4 id="divideandconquer">Divide and Conquer</h4>
+<p>One strategy that might be helpful with this type of error is to divide and conquer. You can comment out different chunks of your code to try to narrow down where the problem is coming from.</p>
+<p>This is a strategy also known as the wolf fence algorithm.</p>
+<blockquote>
+<p>Edward Gauss described this simple but very useful and now famous algorithm in a 1982 article for communications of the ACM as follows: "There's one wolf in Alaska; how do you find it? First build a fence down the middle of the state, wait for the wolf to howl, determine which side of the fence it is on. Repeat process on that side only, until you get to the point where you can see the wolf."</p>
+</blockquote>
+<p>This can be particularly useful for situations when you aren't sure which part of your code is causing something to be missing, or which call is causing the problem. This can be an effective alternative to firing up your debugger, particularly if you're not sure yet what exactly to debug.</p>
+<h4 id="printdebugging">Print Debugging</h4>
+<p>Another technique that can be used is to make full use of your console, and have your code report back to you at every point something has been executed. This means to use 'puts' or 'console.log()' or whatever equivalent in your language will put out a message in your terminal as a little flag for yourself to say, "This step has been done."</p>
+<p>In the example above:</p>
+<pre><code>def saintedNames
+disciples = ["Philip", "Andrew", "Thomas", "John", "James", "Judas", "Matthew", "Simon", "Simon", "Thaddeus", "Bartholomew", "James"]
+    judas = disciples.find{|disciple| disciple == "Judas"}
+    puts "we found #{judas}"
+    disciples.delete(judas)
+    puts "judas was deleted, now there are #{disciples.count} disciples"
+    disciples.uniq
+    puts "eliminated all repeated names, now disciples = #{disciples}"
+    disciples.map {|disciple| "St. #{disciple}"}
+end
+
+saintedNames
+</code></pre>
+<p>What you should get is a series of flags indicating our flow of execution:<br>
+<code>"we found 'Judas'"</code> &lt;- Flag that this step was completed successfully<br>
+<code>"judas was deleted, now there are 11 disciples"</code> &lt;-  Flag that this step was completed successfully.<br>
+<code>"eliminated all repeated names, now disciples = ["Philip", "Andrew", "Thomas", "John", "James", "Matthew", "Simon", "Thaddeus", "Bartholomew"]"</code> &lt;-  Flag that this step was completed successfully.<br>
+<code>["St. Philip", "St. Andrew", "St. Thomas", "St. John", "St. James", "St. Matthew", "St. Simon", "St. Thaddeus", "St. Bartholomew"]</code> &lt;- Your successful code.</p>
+<h1 id="step4readthetestspecsanduseprytosimulatescenarios">Step 4 - Read the test specs, and use Pry to simulate scenarios</h1>
+<p>One thing that will always help your code is to test it on a variety of example to see what it does, and you can do this within Pry. It gives you a sort of environment you can play around in, to see what you can get. And it's much faster to test things out in Pry than to run your test suite over and over again. You can even test examples in your test suite in Pry!</p>
+<p>For example, given our test:</p>
+<pre><code>describe 'Angel' do
+  before do
+    `@michael = Angel.new(name: "Michael")
+  end
+ it 'has a name' do
+    expect(Angel.find_by(name: "Michael")).to eq(@michael)
+  end
+end
+</code></pre>
+<p>And our code:</p>
+<pre><code>class Angel
+    @@all = []
+    attr_accessor :name
+    def initialize(name:name)
+        @name = name
+    end
+    def self.all
+        @@all
+    end
+    def self.find_by(name)
+        Angel.all.find{|angel| angel.name = name}
+    end
+ end
+ binding.pry
+</code></pre>
+<p>Within binding.pry we can directly run:<br>
+<code>Angel.new(name: "Michael")</code><br>
+<code>Angel.find_by("Michael")</code><br>
+And helpful errors will appear directly within the console, if there are any. We can then adjust our code accordingly. Passing this will ensure that we pass our test. So much faster than running the entire suite of tests every time we try something new!</p>
+<p>You can also use this space to challenge your code and see the limits of what's possible. For example, if you run <code>Angel.new(name: "")</code> will it pass? If you run <code>Angel.new(name: 0)</code> Should you try to prevent against these cases?</p>
+<hr>
+<p>This article is by no means comprehensive in terms of what you can do to debug but I hope it is helpful.</p>
+<h1 id="links">Links</h1>
+<p><a href="http://www.rubyguides.com/2015/07/ruby-debugging/">Ruby Guide to Debugging</a><br>
+Specifically dealing with Ruby error messages, how to read them, and other tools Ruby provides to debug.</p>
+<p><a href="https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/debugmethods.html">Techniques for Debugging</a><br>
+General and concise recap of different debugging techniques.</p>
+<p><a href="https://www.youtube.com/watch?v=zv_aOlH8S_o">Debugging Javascript in Google Chrome - Gordon Zhu</a><br>
+This is one of the best videos I've ever seen that teaches about debugging with a tool like Pry, but for Javascript. It specifically focuses on using it to debug iterations - where by putting the debugger in the middle of your method definition, you can literally check the changes to your variables as of every iteration call. For example, in a 'for each' situation you can see how  variables change every time the next item is called.</p>
+<hr>
+<amp-iframe src="https://giphy.com/embed/9oIONgUXLcm5p6CMc3" width="480" height="270" frameborder="0" class="giphy-embed" allowfullscreen sandbox="allow-scripts allow-same-origin" layout="responsive"></amp-iframe><p><a href="https://giphy.com/gifs/tvonetv-love-happy-9oIONgUXLcm5p6CMc3">via GIPHY</a></p>
 
 </div>
 
