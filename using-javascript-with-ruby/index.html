@@ -1,0 +1,313 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+    Using Javascript with Ruby | B L O G 
+    </title>
+
+    
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <!--<link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=472e563724" />-->
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css?v=472e563724">
+    <link rel="stylesheet" href="../assets/css/monokai_sublime.css?v=472e563724">
+    <link rel="stylesheet" href="../assets/css/default.css?v=472e563724">
+<link rel="stylesheet" href="../assets/css/elusive-icons.min.css?v=472e563724">
+
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="B L O G ">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Using Javascript with Ruby">
+    <meta property="og:description" content="During our last project, in which we created an application that tracked the distances for takeaway shops in a certain radius to a user's location, a key part of the interface was embedded maps.We embedded maps for the user's location, for the location of each takeaway, and even for">
+    <meta property="og:url" content="http://localhost:2368/using-javascript-with-ruby/">
+    <meta property="article:published_time" content="2018-09-04T10:32:59.000Z">
+    <meta property="article:modified_time" content="2018-09-04T11:55:45.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using Javascript with Ruby">
+    <meta name="twitter:description" content="During our last project, in which we created an application that tracked the distances for takeaway shops in a certain radius to a user's location, a key part of the interface was embedded maps.We embedded maps for the user's location, for the location of each takeaway, and even for">
+    <meta name="twitter:url" content="http://localhost:2368/using-javascript-with-ruby/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Ritz Wu">
+    <meta name="twitter:site" content="@ridtsz">
+    <meta name="twitter:creator" content="@ridtsz">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "B L O G ",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2018/07/nakajo1.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Ritz Wu",
+        "url": "http://localhost:2368/author/ritz/",
+        "sameAs": [
+            "http://www.ritsu.net",
+            "https://twitter.com/ridtsz"
+        ]
+    },
+    "headline": "Using Javascript with Ruby",
+    "url": "http://localhost:2368/using-javascript-with-ruby/",
+    "datePublished": "2018-09-04T10:32:59.000Z",
+    "dateModified": "2018-09-04T11:55:45.000Z",
+    "description": "During our last project, in which we created an application that tracked the distances for takeaway shops in a certain radius to a user&#x27;s location, a key part of the interface was embedded maps.We embedded maps for the user&#x27;s location, for the location of each takeaway, and even for",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script src="../public/ghost-sdk.js?v=472e563724"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "c568fe3c92f1"
+});
+</script>
+    <meta name="generator" content="Ghost 1.24">
+    <link rel="alternate" type="application/rss+xml" title="B L O G " href="../rss/index.html">
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40547934-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <script type="text/javascript" src="../assets/js/jquery.js?v=472e563724"></script>
+
+    <link rel="stylesheet" href="../assets/css/default.css?v=472e563724">
+
+    <script src="../assets/js/highlight.pack.js?v=472e563724"></script>
+
+      <script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+
+</script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-2 hidden-sm hidden-xs">
+
+    <div class="logo">
+<a class="blog-logo" href="../">
+        <img class="blog-logo-image" src="../content/images/2018/07/nakajo1.png" alt="Blog Logo">
+</a>
+    </div>
+
+<hr>
+<img src="../content/images/me.jpg" class="profile-pic">
+  <p class="blog-tagline"> Thoughts, stories and ideas about web development, by Ritz. </p>
+<ul class="list-unstyled menu">
+    <li>
+        <a href="https://github.com/ritz-w" target="_blank">
+         <i class="el el-github"></i> GitHub
+        </a>
+    </li>
+
+
+        <li>
+            <a href="https://twitter.com/ridtsz" target="_blank">
+                <i class="el el-twitter"></i> @ridtsz
+            </a>
+        </li>
+
+
+</ul>
+</div>
+<div class="col-md-10 col-xs-12">
+    <!--  -->
+
+
+<a href="../" class="read-more"><i class="el el-caret-left read-more"></i> home</a>
+<hr>
+
+
+
+
+
+<main role="main" class="blogpost">
+
+    <article class="row post">
+
+        <header class="col-xs-12">
+        <div class="col-md-10 no-margin no-padding post">
+            <h1 class="title">
+            Using Javascript with Ruby
+
+            </h1>
+             </div>
+<div class="col-md-2">
+            </div>
+
+        </header>
+
+        <section class="col-xs-12">
+            <div class="kg-post">
+<p>During our last project, in which we created an application that tracked the distances for takeaway shops in a certain radius to a user's location, a key part of the interface was embedded maps.</p><p>We embedded maps for the user's location, for the location of each takeaway, and even for where certain dishes in our database came from. As such, a key part of our project was learning to use the Google Maps API, which was written in Javascript.</p><figure class="kg-image-card"><img src="../content/images/2018/09/gmap.gif" class="kg-image"></figure><h1 id="anatomy-of-a-map">Anatomy of a Map</h1><p>This is the structure of the code block that contains our map. It is written into a view file, wrapped in HTML. First, we need to define the area where we intend to put our map. The Javascript code follows afterward, in &lt;script&gt; tags. However, it doesn't have to go here. I put it here for clarity, but in fact it would perhaps be best placed at the bottom of the &lt;body&gt; tag. There are two separate Javascript tags here. The first one creates the map element. The second one calls the API - or links the files/resources needed to create the map, as well as providing our authentication details. </p><pre><code>&lt;div class="col-md-6"&gt;
+    
+&lt;!--Below is the div element containing the map. We have tagged it with an id of "map-container", which is what we are going to use later to let the mapknow where it should go. --&gt;
+    
+ &lt;div class="container" id="map-container"&gt;
+ &lt;/div&gt;
+ 
+&lt;!-- And here, we inject our script tag with the Javascript inside. Now, knowing more about Javascript we know that this should perhaps go at the bottom of the &lt;body&gt; --&gt;
+
+&lt;script&gt;
+    //Insert content here from the next code block...   
+&lt;/script&gt;
+       
+    
+&lt;!-- Under the first Javascript tag, here we call the google maps API, which contains our key. For security purposes we have hidden it. --&gt; 
+  &lt;script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=..............................&amp;callback=initMap"&gt;
+  &lt;/script&gt;
+&lt;/div&gt;</code></pre><p></p><p>You'll find the second script also has an 'async defer' in its tag. What does this mean? Well unlike our first script tag, it specifies that the script is executed when the page has finished parsing. The <strong>defer</strong> attribute is only for external scripts (should only be used if the src attribute is present).  When an external script has this attribute, the file can be downloaded while the HTML document is still parsing. Once it has been downloaded, the parsing is paused for the script to be executed.</p><p>That means that the call to the API (you'll see in the URL where we specify we want the init function) will be downloading while our page is loading, and finally when our page is loaded it will fire the call. This makes the loading of the page efficient, and makes sure that all of the elements on the page will be rendered before we try to make changes to any of them.</p><h1 id="mix-and-match">Mix and Match</h1><figure class="kg-image-card"><img src="../content/images/2018/09/mo.gif" class="kg-image"></figure><p>OK, what about this initMap function?</p><p>Here is the code that was inserted inside our first &lt;script&gt; tag above.</p><p>In the absence of wanting to create a whole other Javascript file to deal with our maps, and given the occasional need to use the information from Ruby variables within our maps (specifically, the latitude and longitude variables that were stored within our database) we often ended up mixing Ruby and Javascript, and seeing how far we could push that kind of behaviour.</p><pre><code>function initMap() {
+// We define a variable 'place', which is a hash containing the coordinates of the location of the marker we want to put on the map. As you can see these are provided by Ruby variables. Using the familiar Ruby tag, we are able to insert those values into our Javascript variable.
+
+var place = {lat: &lt;%= @restaurant.get_coordinates[0] %&gt; , lng: &lt;%= @restaurant.get_coordinates[1] %&gt;};
+    
+
+//We create a new map, which calls from the Google Maps API, and plug it the div element we defined above.
+    
+var map = new google.maps.Map(document.getElementById('map-container'), {zoom: 12, center: place});
+    
+    
+//We create the actual marker, and put it at the position of the place variable we defined earlier.
+
+var marker = new google.maps.Marker({position: place, map: map}); 
+}</code></pre><p>This surprisingly worked. What about this?</p><pre><code>    //Here, I used Ruby to create an array of restaurant coordinates and restaurant information (name, ID, and address) that I'm later gonna stick into an InfoWindow (a Google Maps feature that will pop up a little info box when I click on the marker).
+    
+    var locations = &lt;%= raw @restaurants.map {|restaurant| [restaurant.name, restaurant.getcoordinates[0], restaurant.getcoordinates[1], restaurant.id, restaurant.address]} %&gt;;
+    
+   //Initializing the map....
+
+    function initMap() {
+    
+    
+    //Creating new map (var map) ...
+        
+        var map = new google.maps.Map(document.getElementById('all-restaurants-map-container'), {
+            zoom: 12,
+            center: new google.maps.LatLng(51.5138, -0.15),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+    
+    //Creating the new InfoWindow and Marker...
+
+        var infowindow = new google.maps.InfoWindow()
+        var marker, i;
+        
+       //And I iterate through my locations variable to produce a new marker and info window for every entry. 
+
+        for (i = 0; i &lt; locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            
+            
+            //Here I interpolate HTML into Javascript to be able to insert the information from my array into the Window. And you will notice that I use the ${} tag, to call Javascript variables within the HTML. That's a lot of mixing and matching.
+            
+            
+                return function () {
+                  var contentString = '&lt;div id="content"&gt;'+
+                  '&lt;div id="siteNotice"&gt;'+
+                  '&lt;/div&gt;'+
+                  '&lt;h5 id="firstHeading" class="firstHeading"&gt;'+locations[i][0]+'&lt;/h5&gt;'+
+                  '&lt;div id="bodyContent"&gt;'+
+                  `&lt;p&gt; &lt;a href="/restaurants/${locations[i][3]}"&gt;
+                  ${locations[i][4]}&lt;/a&gt;`+
+                  '&lt;/div&gt;'+
+                  '&lt;/div&gt;';
+                    infowindow.setContent(contentString);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    }
+</code></pre>
+<h1 id="is-this-best-practice">Is this best practice?</h1><p>To be honest with you, no. While it's a quick fix for a project like this one, and probably was a lot more common before, according to seasoned Ruby/JS developers, it's on it's way out.</p><p>The main problem here is that it couples your JS too tightly to your view HTML, which causes a <a href="https://stackoverflow.com/questions/7221923/is-it-correct-to-have-files-that-mix-javascript-and-ruby-ie-js-erb">lack of flexibility and too much complexity</a>.  This is not code that can be recycled. Also, any changes or updates that you make would have to go through the HTML. </p><p>However, in this particular project, it does allow us a degree of flexibility in being able to access variables that may be constantly updated to populate a few maps. For a larger project this wouldn't be a good idea, but it fit ours.</p>
+</div>
+        </section>
+
+        <footer class="col-xs-12 author">
+
+            <hr>
+
+
+        </footer>
+
+    </article>
+
+    <!--<div id="disqus_thread" class="post"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = ''; // required: replace example with your forum shortname
+        var disqus_identifier = '';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+
+</main>
+
+
+</div>
+
+</div>
+</div>
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col=md-8">
+            <p>© 2018 <a href="../">B L O G </a> All rights reserved.<br>
+            Custom modification of Coder Ghost Theme created by <a href="https://www.mbejda.com">Milos Bejda</a><br>
+          Proudly published with <a href="https://ghost.org">Ghost</a></p>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="index.html#" class="back-to-top"><span class="fa fa-angle-up fa-2x"></span></a>
+
+    
+
+    <script src="../assets/js/modernizr.js?v=472e563724"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=472e563724"></script>
+
+</body>
