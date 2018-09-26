@@ -1,4 +1,109 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>B L O G </title><description>Thoughts, stories and ideas about web development, by Ritz.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>B L O G </title><link>http://localhost:2368/</link></image><generator>Ghost 1.24</generator><lastBuildDate>Tue, 04 Sep 2018 15:04:27 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Using Javascript with Ruby</title><description>&lt;div class="kg-post"&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>B L O G </title><description>Thoughts, stories and ideas about web development, by Ritz.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>B L O G </title><link>http://localhost:2368/</link></image><generator>Ghost 1.24</generator><lastBuildDate>Wed, 26 Sep 2018 14:54:54 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Javascript Design Patterns</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Making the transition from learning to create an app with Ruby on Rails, to using Javascript to create advanced front-end features and communicate with a database backend, it becomes apparent that the strict architecture and other conventions provided by Rails, while often complex, helped us stay organised within the MVC&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2368/javascript-design-patterns/</link><guid isPermaLink="false">5ba0fdaa107a071f2884965b</guid><dc:creator>Ritz Wu</dc:creator><pubDate>Tue, 18 Sep 2018 13:48:37 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Making the transition from learning to create an app with Ruby on Rails, to using Javascript to create advanced front-end features and communicate with a database backend, it becomes apparent that the strict architecture and other conventions provided by Rails, while often complex, helped us stay organised within the MVC framework, ultimately created by somebody else.&lt;/p&gt;
+&lt;p&gt;If we take the metaphor of actual architecture - it is as if we are creating a home out of a pre-fab house. In the case of Rails, it is MVC.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/09/prefab.jpg" alt="prefab"&gt;&lt;br&gt;
+&lt;em&gt;&amp;quot;A modular, transportable, prefabricated off site, factory built, self build, flat pack, unit.&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;With Javascript, however, one of the most creative features of using the language is that essentially, you are asked to design your own architecture.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/09/house2.jpg" alt="house2"&gt;&lt;/p&gt;
+&lt;p&gt;While at the beginning this may start with a tangle of different functions, each doing what the programmer feels might most quickly get them to their desired outcome, it becomes apparent after a while that the resulting code becomes incredibly complex to read, let alone to be used by someone else.&lt;/p&gt;
+&lt;p&gt;This would be like building a bedroom when you need a bedroom, a bathroom when you need a bathroom - essentially you'd end up with a home like this.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2018/09/sheds.jpg" alt="sheds"&gt;&lt;br&gt;
+&lt;em&gt;Which door leads to the bathroom? When did I build the kitchen again?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In the process of refactoring my code and thinking about organisation from a big-picture perspective, I started to wonder how programmers would begin to approach the architectural project, and I found that a whole host of existing design patterns, almost like blueprints for houses, existed.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Each of the design patterns represents a specific type of solution to a specific type of problem.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Comprehensive Guide to JavaScript Design Patterns, Marko Misura&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="architecturaldesignpatterns"&gt;Architectural Design Patterns&lt;/h2&gt;
+&lt;p&gt;For example, the variations on the Model-View-Controller pattern are known as literally, architectural design patterns. In general, architectural patterns separate out the application logic into separate parts, promoting modularity and ease of collaboration and reuse.&lt;/p&gt;
+&lt;h3 id="mvcmodelviewcontroller"&gt;MVC (Model View Controller)&lt;/h3&gt;
+&lt;p&gt;The standard in Ruby on Rails, where the model handles creation/modification of data in the database, the view gathers user information, user-DOM interaction, and the controller manages the interaction between the two.&lt;/p&gt;
+&lt;h3 id="mvpmodelviewpresenter"&gt;MVP (Model View Presenter)&lt;/h3&gt;
+&lt;p&gt;A variation on MVC, where instead of a controller that manages interaction between model and view, you have a presenter, that also handles the presentation logic. This means the presenter doesnt communicate directly with the view, it does so through another interface.&lt;/p&gt;
+&lt;h3 id="mvvmmodelviewviewmodel"&gt;MVVM (Model View ViewModel)&lt;/h3&gt;
+&lt;p&gt;This structure is used primarily in projects where separate teams of developers - those working on the user interface and those working on the application logic, maintain separate areas within the same codebase, allowing them to work simultaneously. The ViewModel is maintained by UI developers, and the Model and View by application developers.&lt;/p&gt;
+&lt;h2 id="creationaldesignpatterns"&gt;Creational Design Patterns&lt;/h2&gt;
+&lt;p&gt;With projects that are heavily object-oriented (involve a lot of objects), in order to work with them in an optimised, efficient way, this kind of pattern is focused on controlling the creation of objects.&lt;/p&gt;
+&lt;p&gt;You will recognise, for example, the following:&lt;/p&gt;
+&lt;h3 id="factorypattern"&gt;Factory Pattern&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;const Dog = function(name){
+const dog = {};
+dog.name = name;
+dog.walk = function(){
+    console.log(this.name + &amp;quot; walks&amp;quot;);
+}
+return dog;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is an example of a function that generates a Truck object. With the factory pattern, one would use constructor methods or ordinary functions to define multiple instances that would need to be used.&lt;/p&gt;
+&lt;h3 id="abstractfactorypattern"&gt;Abstract Factory Pattern&lt;/h3&gt;
+&lt;p&gt;Related to the Factory Pattern, the Abstract Factory Pattern also emphasises a way to create objects in a controlled manner. However, instead of single objects at a time under a class name, it would generate families of interrelated objects, some of which might have no names.&lt;/p&gt;
+&lt;h2 id="structuraldesignpatterns"&gt;Structural Design Patterns&lt;/h2&gt;
+&lt;p&gt;These patterns handle the relationships between objects, such that if some part changes, the rest of it doesn't have to change as well. In the way that React separates things into components that may or may not be interdependent, structural design emphasises independence of certain key elements.&lt;/p&gt;
+&lt;p&gt;Examples of this are:&lt;/p&gt;
+&lt;h3 id="adapterpattern"&gt;Adapter Pattern&lt;/h3&gt;
+&lt;p&gt;The adapter pattern allows classes whose interfaces wouldn't otherwise by compatible, by using adapter functions that would allow them to work together. The interdependence of these two objects, therefore, is the remit of this third-party object, the adapter.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;p&gt;For an object of a Shopping Cart:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function ShoppingCart() {}
+ShoppingCart.prototype.add = function(item) {
+    var items = localStorage.getItem('cart');
+    if (items) {
+        items = JSON.parse(items);
+        if (items[item.id]) {
+            items[item.id].quantity += 1;
+        } else {
+        item.quantity = 1;
+         items[item.id] = item;
+        }
+    } else {
+    items = {};
+    item.quantity = 1;
+    items[item.id] = item;
+    }
+    
+   items = JSON.stringify(items);
+   localStorage.setItem('cart', items);
+   return item;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If suddenly you were asked to change part of the code to save the cart to server storage instead of local storage, it might mess up this function, and all the places it has been used in the rest of your project. Therefore, it'd be better to handle that part of the function with an adapter that could save the cart to either local storage or server storage.&lt;/p&gt;
+&lt;p&gt;For example, it could look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var localStorageAdapter = {
+    findAll: function() {
+    var deferred = new $.Deferred();
+    var items = localStorage.getItem('cart');
+    if (items) {
+      items = JSON.parse(items);
+    }
+    deferred.resolve(items);
+    return deferred.promise();
+    },
+    
+    save: function(items) {
+    var deferred = new $.Deferred();
+
+    items = JSON.stringify(items);
+    localStorage.setItem('cart', items);
+    deferred.resolve();
+    return deferred.promise();
+    }
+  };
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Credit for example: &lt;a href="https://thejsguy.com/2015/10/16/the-adapter-pattern-in-javascript.html"&gt;https://thejsguy.com/2015/10/16/the-adapter-pattern-in-javascript.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id="bridgepattern"&gt;Bridge Pattern&lt;/h3&gt;
+&lt;p&gt;The Bridge pattern allows a client and a service, to work together with each component having its own interface. You might think of this as a double adapter structure, where both the client and the service have their own adapters in order to access each other.&lt;/p&gt;
+&lt;p&gt;For example, this might apply where you have a server calling to an API. However, the API will need a different adapter depending on what kind of server you are using (SQLite vs. Postgresql, for example), and the server itself will also need an adapter depending on the kind of API that is being called.&lt;/p&gt;
+&lt;p&gt;This is a highly abstract pattern, and ultimately quite rare.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This is by no means the comprehensive list of design patterns - there are hundreds. For every developer who has a tried and true method of structuring a project, there is a new blueprint to be added to the list. And as with real architecture, you can certainly try to use a combination of different patterns to suit your needs. Have fun building!&lt;/p&gt;
+&lt;h1 id="resourcestoreadaboutdesignpatterns"&gt;Resources to Read about Design Patterns&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://jstherightway.org/"&gt;JS: The Right Way&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://refactoring.guru/design-patterns"&gt;Refactoring Guru: Design Patterns&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/"&gt;Essential JS Design Patterns&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.dofactory.com/javascript/"&gt;Do Factory: JS Design Patterns&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Using Javascript with Ruby</title><description>&lt;div class="kg-post"&gt;
 &lt;p&gt;During our last project, in which we created an application that tracked the distances for takeaway shops in a certain radius to a user's location, a key part of the interface was embedded maps.&lt;/p&gt;&lt;p&gt;We embedded maps for the user's location, for the location of each takeaway, and even for&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2368/using-javascript-with-ruby/</link><guid isPermaLink="false">5b8e5eb38665e40978ca5179</guid><dc:creator>Ritz Wu</dc:creator><pubDate>Tue, 04 Sep 2018 10:32:59 GMT</pubDate><content:encoded>&lt;div class="kg-post"&gt;
 &lt;p&gt;During our last project, in which we created an application that tracked the distances for takeaway shops in a certain radius to a user's location, a key part of the interface was embedded maps.&lt;/p&gt;&lt;p&gt;We embedded maps for the user's location, for the location of each takeaway, and even for where certain dishes in our database came from. As such, a key part of our project was learning to use the Google Maps API, which was written in Javascript.&lt;/p&gt;&lt;figure class="kg-image-card"&gt;&lt;img src="http://localhost:2368/content/images/2018/09/gmap.gif" class="kg-image"&gt;&lt;/figure&gt;&lt;h1 id="anatomy-of-a-map"&gt;Anatomy of a Map&lt;/h1&gt;&lt;p&gt;This is the structure of the code block that contains our map. It is written into a view file, wrapped in HTML. First, we need to define the area where we intend to put our map. The Javascript code follows afterward, in &amp;lt;script&amp;gt; tags. However, it doesn't have to go here. I put it here for clarity, but in fact it would perhaps be best placed at the bottom of the &amp;lt;body&amp;gt; tag. There are two separate Javascript tags here. The first one creates the map element. The second one calls the API - or links the files/resources needed to create the map, as well as providing our authentication details. &lt;/p&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;div class="col-md-6"&amp;gt;
     
